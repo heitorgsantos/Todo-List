@@ -7,18 +7,19 @@ button.innerHTML = 'Adicionar Tarefa';
 const listaDeTarefas = document.createElement('ol');
 listaDeTarefas.id = 'lista-tarefas';
 minhaListaDeTarefas.appendChild(listaDeTarefas);
-//5 
+
+//ativiada numero 5 //
+
 function displayList() {
-  let textInput = document.querySelector('#texto-tarefa');
-  let listaLi = document.createElement('li');
+  const textInput = document.querySelector('#texto-tarefa');
+  const listaLi = document.createElement('li');
   listaLi.classList = 'tarefa';
   listaLi.innerHTML = textInput.value;
-  let ol = document.getElementById('lista-tarefas');
+  const ol = document.getElementById('lista-tarefas');
   ol.appendChild(listaLi);
   textInput.value = '';
   listaLi.addEventListener('click', blackGroundColor);
   listaLi.addEventListener('dblclick', lineRisc);
-  
 }
 
 /* Desafio 6*/
@@ -27,11 +28,9 @@ function blackGroundColor(evento) {
   const event= evento.target
   // console.log(event);
   let listaLi = document.getElementsByClassName('tarefa');
-  
   for (let index = 0; index < listaLi.length; index += 1) {
     listaLi[index].style.backgroundColor = '';
   }
-  
   event.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
@@ -67,11 +66,5 @@ function delAll() {
     listaDeTarefas.remove(listaLi);
   }
 }
-
 deleteAll.addEventListener('click', delAll);
-
-
-
-
-
 button.addEventListener('click', displayList);
