@@ -1,18 +1,13 @@
 const button = document.createElement('button');
-button.id  = 'criar-tarefa';
+button.id = 'criar-tarefa';
 const minhaListaDeTarefas = document.getElementsByTagName('header')[0];
 minhaListaDeTarefas.appendChild(button);
-button.innerHTML = "Adicionar Tarefa"
-
+button.innerHTML = "Adicionar Tarefa";
 
 const listaDeTarefas = document.createElement('ol');
 listaDeTarefas.id = 'lista-tarefas';
 minhaListaDeTarefas.appendChild(listaDeTarefas);
-
-
 //5 
-
-
 function displayList() {
   let textInput = document.querySelector('#texto-tarefa');
   let listaLi = document.createElement('li');
