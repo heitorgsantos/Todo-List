@@ -10,7 +10,7 @@ body {
   height: 30px;
   border-radius: 30px;
   border: none;
-  float: right ;
+  float: right;
   margin-right: 190px;
   margin-bottom: px;
   display: inline;
@@ -28,7 +28,7 @@ header {
   width: 120px;
   height: 25px;
   border-radius: 3px;
-  border: 2px solid rgb(8, 42, 8) ;
+  border: 2px, solid, rgb(8, 42, 8);
   background-color: rgb(228, 1, 1);
   color: aliceblue;
   font-weight: bold;
