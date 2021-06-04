@@ -1,32 +1,16 @@
-//4 - Adicione uma lista ordenada de tarefas com o id="lista-tarefas"//
-//O que será verificado://
-//Será verificada a existência de um elemento ol com o id lista-tarefas.//
+const button = document.createElement('button');
+button.id  = 'criar-tarefa';
+const minhaListaDeTarefas = document.getElementsByTagName('header')[0];
+minhaListaDeTarefas.appendChild(button);
+button.innerHTML = "Adicionar Tarefa"
+
 
 const listaDeTarefas = document.createElement('ol');
 listaDeTarefas.id = 'lista-tarefas';
-const minhaListaDeTarefas = document.getElementsByTagName('header')[0];
 minhaListaDeTarefas.appendChild(listaDeTarefas);
 
 
-//5 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá// 
-//ser criado ao final da lista e o texto do input deve ser limpo//
-
-//O que será verificado://
-
-//Será verificada a existência de um elemento do tipo button com o id criar-tarefa//
-//No campo de input será digitado o texto de uma tarefa qualquer e, em seguida, clicar-se-á no botão de criar tarefa. //
-
-//**Será verificado que, após o clique, o texto digitado aparece na lista e desaparece do input.////
-
-//**A adição de elementos na lista será feita algumas vezes, e será checado se //
-//todos os itens criados permanecem na lista na medida em que novos são adicionados.//
-
-//Botão de adicionar
-const button = document.createElement('button');
-button.id  = 'criar-tarefa';
-minhaListaDeTarefas.appendChild(button);
-button.innerHTML = "Adicionar Tarefa"
-//desenvolvimento do input
+//5 
 
 
 function displayList() {
@@ -37,7 +21,62 @@ function displayList() {
   let ol = document.getElementById('lista-tarefas');
   ol.appendChild(listaLi);
   textInput.value = '';
+  listaLi.addEventListener('click', blackGroundColor);
+  listaLi.addEventListener('dblclick', lineRisc);
   
 }
+
+/* Desafio 6*/
+
+function blackGroundColor(evento) {
+  const event= evento.target
+  // console.log(event);
+  let listaLi = document.getElementsByClassName('tarefa');
+  
+  for (let index = 0; index < listaLi.length; index += 1) {
+    listaLi[index].style.backgroundColor = '';
+  }
+  
+  event.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+//Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. 
+//Deve ser possível desfazer essa ação clicando novamente duas vezes no item.
+
+let listaLi = document.getElementsByClassName('tarefa');
+let completo = document.getElementsByClassName('completed');
+
+function lineRisc(evento) {
+  const eventLi = evento.target;
+  // se evento listaLi estiver marcado com completed, desmarcar
+  if(eventLi.classList.contains('completed')) {
+    eventLi.classList.remove('completed') 
+  }else {  
+    eventLi.classList.add('completed');
+  }
+  // se não estiver marcado, marcar 
+} 
+// 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista
+//     1) Será verificado que existe um elemento `button` com o id `apaga-tudo`
+//     2) Será verificado que, dado que uma lista possui tarefas, um clique no botão a deixa vazia
+
+let buttons = document.querySelector('#buttons');
+let deleteAll = document.createElement('button');
+buttons.appendChild(deleteAll);
+deleteAll.id = 'apaga-tudo';
+deleteAll.innerHTML = 'Apagar Tudo';
+
+function delAll() {
+  
+  if(listaLi){
+    listaDeTarefas.remove(listaLi);
+  }
+}
+
+deleteAll.addEventListener('click', delAll);
+
+
+
+
 
 button.addEventListener('click', displayList);

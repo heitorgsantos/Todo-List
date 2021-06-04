@@ -21,3 +21,25 @@ header {
   margin-right: auto;
   margin-top: 80px;
 }
+.completed {
+  text-decoration: line-through;
+}
+#apaga-tudo {
+  width: 120px;
+  height: 25px;
+  border-radius: 3px;
+  border: 2px solid rgb(8, 42, 8) ;
+  background-color: rgb(228, 1, 1);
+  color: aliceblue;
+  font-weight: bold;
+  font-family:  Verdana, Geneva, Tahoma, sans-serif;
+
+  
+
+}
+#buttons {
+  width: 400px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
