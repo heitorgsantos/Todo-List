@@ -2,7 +2,7 @@ const button = document.createElement('button');
 button.id = 'criar-tarefa';
 const minhaListaDeTarefas = document.getElementsByTagName('header')[0];
 minhaListaDeTarefas.appendChild(button);
-button.innerHTML = "Adicionar Tarefa";
+button.innerHTML = 'Adicionar Tarefa';
 
 const listaDeTarefas = document.createElement('ol');
 listaDeTarefas.id = 'lista-tarefas';
@@ -35,8 +35,8 @@ function blackGroundColor(evento) {
   event.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
-//Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. 
-//Deve ser possível desfazer essa ação clicando novamente duas vezes no item.
+//Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. //
+//Deve ser possível desfazer essa ação clicando novamente duas vezes no item.//
 
 let listaLi = document.getElementsByClassName('tarefa');
 let completo = document.getElementsByClassName('completed');
