@@ -68,3 +68,17 @@ function delAll() {
 }
 deleteAll.addEventListener('click', delAll);
 button.addEventListener('click', displayList);
+
+let buttonRemove = document.createElement('button');
+buttonRemove.id = ('remover-finalizados');
+buttonRemove.innerHTML = ('Remover Finalizados')
+buttons.appendChild(buttonRemove);
+
+buttonRemove.addEventListener('click', function(){
+  for(let index = 0; index < listaLi.length; index += 1){
+    if(listaLi[index].classList.contains('completed')){
+      listaDeTarefas.remove(listaLi);
+    }
+
+  }
+})
