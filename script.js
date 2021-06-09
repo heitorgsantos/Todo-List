@@ -77,8 +77,7 @@ buttons.appendChild(buttonRemove);
 buttonRemove.addEventListener('click', function(){
   for(let index = 0; index < listaLi.length; index += 1){
     if(listaLi[index].classList.contains('completed')){
-      listaDeTarefas.remove(listaLi);
+      listaDeTarefas.removeChild(listaLi[index]);
     }
-
   }
 })
