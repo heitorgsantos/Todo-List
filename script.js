@@ -8,7 +8,27 @@ const listaDeTarefas = document.createElement('ol');
 listaDeTarefas.id = 'lista-tarefas';
 minhaListaDeTarefas.appendChild(listaDeTarefas);
 
-//ativiada numero 5 //
+//ativiada numero 5 // 
+
+function blackGroundColor(evento) {
+  const event= evento.target
+  // console.log(event);
+  let listaLi = document.getElementsByClassName('tarefa');
+  for (let index = 0; index < listaLi.length; index += 1) {
+    listaLi[index].style.backgroundColor = '';
+  }
+  event.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+function lineRisc(evento) {
+  const eventLi = evento.target;
+  // se evento listaLi estiver marcado com completed, desmarcar
+  if(eventLi.classList.contains('completed')) {
+    eventLi.classList.remove('completed') 
+  }else {  
+    eventLi.classList.add('completed');
+  }
+  
+} 
 
 function displayList() {
   const textInput = document.querySelector('#texto-tarefa');
@@ -24,15 +44,6 @@ function displayList() {
 
 /* Desafio 6*/
 
-function blackGroundColor(evento) {
-  const event= evento.target
-  // console.log(event);
-  let listaLi = document.getElementsByClassName('tarefa');
-  for (let index = 0; index < listaLi.length; index += 1) {
-    listaLi[index].style.backgroundColor = '';
-  }
-  event.style.backgroundColor = 'rgb(128, 128, 128)';
-}
 
 //Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. //
 //Deve ser possível desfazer essa ação clicando novamente duas vezes no item.//
@@ -40,16 +51,6 @@ function blackGroundColor(evento) {
 let listaLi = document.getElementsByClassName('tarefa');
 let completo = document.getElementsByClassName('completed');
 
-function lineRisc(evento) {
-  const eventLi = evento.target;
-  // se evento listaLi estiver marcado com completed, desmarcar
-  if(eventLi.classList.contains('completed')) {
-    eventLi.classList.remove('completed') 
-  }else {  
-    eventLi.classList.add('completed');
-  }
-  // se não estiver marcado, marcar 
-} 
 // 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista
 //     1) Será verificado que existe um elemento `button` com o id `apaga-tudo`
 //     2) Será verificado que, dado que uma lista possui tarefas, um clique no botão a deixa vazia
